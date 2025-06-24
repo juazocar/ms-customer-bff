@@ -1,4 +1,5 @@
-package cl.marco.eli.ms_customer_bff.clients;
+package cl.marco.eli.ms_customer_bff.model.dto;
+
 
 public record CustomerDTO(
         Long id,

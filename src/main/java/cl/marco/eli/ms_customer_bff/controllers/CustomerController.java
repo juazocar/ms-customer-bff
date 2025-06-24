@@ -1,7 +1,8 @@
 package cl.marco.eli.ms_customer_bff.controllers;
 
-import cl.marco.eli.ms_customer_bff.clients.CustomerClient;
-import cl.marco.eli.ms_customer_bff.clients.CustomerDTO;
+import cl.marco.eli.ms_customer_bff.model.dto.CustomerDTO;
+import cl.marco.eli.ms_customer_bff.service.CustomerService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -9,8 +10,12 @@ import java.util.List;
 @RequestMapping("/store/customers")
 @CrossOrigin(origins = "*")
 public class CustomerController {
+   
     @Autowired
-    private CustomerClient customerClient;
+    CustomerService customerService;
+
     @GetMapping
-    public List<CustomerDTO> getCustomers() { return customerClient.getAllCustomers(); }
+    public List<CustomerDTO> getCustomers() { 
+        return customerService.getAllCustomers(); 
+    }
 }
